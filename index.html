@@ -1,0 +1,1307 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#f5efe6" />
+  <title>XVI Años | Mara Blanco | 18 de julio de 2026</title>
+  <meta name="description" content="Invitación digital premium para los XVI años de Mara Blanco. 18 de julio de 2026." />
+  <meta property="og:title" content="XVI Años | Mara Blanco" />
+  <meta property="og:description" content="Acompáñanos el 18 de julio de 2026." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Tipos premium: editorial serif + sans moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      /* Palette */
+      --sand-50:#fbf7f0;
+      --sand-100:#f5efe6;
+      --sand-200:#efe4d6;
+      --sand-300:#e8dccb;
+
+      --ink:#1f1f1f;
+      --ink-2:#2c2c2c;
+      --muted:#6f6f6f;
+
+      --gold:#c6a75e;
+      --gold-2:#b7923f;
+      --line: rgba(198,167,94,.35);
+
+      --card: rgba(255,255,255,.55);
+      --glass: rgba(255,255,255,.36);
+
+      --shadow: 0 22px 60px rgba(17, 17, 17, .12);
+      --shadow-soft: 0 14px 40px rgba(17, 17, 17, .09);
+
+      --radius: 22px;
+      --radius-lg: 28px;
+
+      --serif: "Cormorant Garamond", serif;
+      --sans: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+      --max: 1080px;
+    }
+
+    *{ box-sizing:border-box; }
+    html, body { height:100%; }
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 700px at 10% 0%, rgba(198,167,94,.16), transparent 55%),
+        radial-gradient(900px 650px at 90% 20%, rgba(198,167,94,.12), transparent 60%),
+        linear-gradient(180deg, var(--sand-50), var(--sand-100) 42%, var(--sand-200));
+      overflow-x:hidden;
+    }
+
+    /* Decorative grain */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+      opacity:.18;
+      mix-blend-mode:multiply;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    button{ font-family:inherit; }
+
+    .wrap{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+      position:relative;
+      z-index:1;
+    }
+
+    /* Top floating nav */
+    .topbar{
+      position:sticky;
+      top:12px;
+      z-index:50;
+      margin-top:12px;
+    }
+    .topbar-inner{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 12px;
+      border:1px solid rgba(198,167,94,.26);
+      background:rgba(255,255,255,.40);
+      backdrop-filter: blur(12px);
+      border-radius: 999px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.06);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width: 180px;
+    }
+    .monogram{
+      width:34px;height:34px;border-radius:999px;
+      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.85), rgba(255,255,255,.25)),
+                  linear-gradient(180deg, rgba(198,167,94,.65), rgba(198,167,94,.25));
+      border:1px solid rgba(198,167,94,.35);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
+      display:grid; place-items:center;
+      font-family:var(--serif);
+      font-weight:700;
+      letter-spacing:.02em;
+      color:var(--ink-2);
+    }
+    .brand .t{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+    }
+    .brand .t small{
+      font-size:.70rem;
+      color:rgba(44,44,44,.70);
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    .brand .t strong{
+      font-family:var(--serif);
+      font-weight:700;
+      font-size:1.0rem;
+      letter-spacing:.02em;
+    }
+
+    .navlinks{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    }
+    .pill{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(198,167,94,.22);
+      background: rgba(255,255,255,.30);
+      color:rgba(31,31,31,.80);
+      font-size:.82rem;
+      letter-spacing:.02em;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      cursor:pointer;
+      user-select:none;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+    }
+    .pill:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.45);
+      border-color: rgba(198,167,94,.35);
+    }
+    .pill.primary{
+      background: linear-gradient(180deg, rgba(198,167,94,.90), rgba(198,167,94,.55));
+      border-color: rgba(183,146,63,.55);
+      color:#fff;
+      box-shadow: 0 14px 30px rgba(198,167,94,.25);
+    }
+    .pill.primary:hover{ transform: translateY(-2px); }
+
+    /* Hero */
+    header.hero{
+      padding: 58px 0 18px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .brand{ min-width: unset; }
+      .navlinks{ display:none; }
+    }
+
+    .hero-card{
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(700px 480px at 15% 10%, rgba(198,167,94,.18), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.22));
+      border: 1px solid rgba(198,167,94,.22);
+      box-shadow: var(--shadow);
+      padding: 34px 30px;
+      position:relative;
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+    }
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(420px 220px at 80% 20%, rgba(255,255,255,.45), transparent 62%),
+        radial-gradient(520px 280px at 20% 80%, rgba(255,255,255,.32), transparent 66%);
+      pointer-events:none;
+      opacity:.55;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(198,167,94,.25);
+      background: rgba(255,255,255,.25);
+      color: rgba(31,31,31,.74);
+      font-size:.78rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      position:relative;
+      z-index:1;
+      width:fit-content;
+    }
+    .kicker .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: linear-gradient(180deg, rgba(198,167,94,.95), rgba(198,167,94,.45));
+      box-shadow: 0 10px 20px rgba(198,167,94,.22);
+    }
+
+    h1{
+      margin:18px 0 8px;
+      font-family: var(--serif);
+      font-weight: 700;
+      letter-spacing: .01em;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      line-height: .98;
+      position:relative;
+      z-index:1;
+      color:var(--ink-2);
+    }
+    .subtitle{
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+      color: rgba(44,44,44,.84);
+      margin: 0 0 18px;
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 16px;
+      position:relative;
+      z-index:1;
+    }
+    .meta-chip{
+      padding:10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(198,167,94,.18);
+      background: rgba(255,255,255,.32);
+      font-size:.86rem;
+      color: rgba(31,31,31,.82);
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      backdrop-filter: blur(10px);
+    }
+    .meta-chip b{
+      font-weight:600;
+      color: rgba(31,31,31,.92);
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      margin-top: 18px;
+      flex-wrap:wrap;
+      position:relative;
+      z-index:1;
+    }
+    .btn{
+      appearance:none;
+      border:0;
+      cursor:pointer;
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-size:.92rem;
+      letter-spacing:.01em;
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn.primary{
+      color:#fff;
+      background: linear-gradient(180deg, rgba(198,167,94,.98), rgba(183,146,63,.70));
+      box-shadow: 0 18px 40px rgba(198,167,94,.22);
+    }
+    .btn.ghost{
+      color: rgba(31,31,31,.86);
+      border:1px solid rgba(198,167,94,.30);
+      background: rgba(255,255,255,.30);
+      backdrop-filter: blur(10px);
+    }
+    .btn:hover{ transform: translateY(-2px); }
+    .btn:active{ transform: translateY(0px); filter: brightness(.98); }
+
+    /* Right hero panel */
+    .side-card{
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(198,167,94,.22);
+      background: rgba(255,255,255,.34);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 20px;
+      backdrop-filter: blur(12px);
+      position:relative;
+      overflow:hidden;
+    }
+    .side-card::before{
+      content:"";
+      position:absolute;
+      inset: -1px;
+      background:
+        radial-gradient(500px 260px at 20% 10%, rgba(198,167,94,.20), transparent 60%),
+        radial-gradient(560px 320px at 80% 90%, rgba(255,255,255,.30), transparent 60%);
+      opacity:.70;
+      pointer-events:none;
+    }
+
+    .section-title{
+      position:relative;
+      z-index:1;
+      margin: 6px 0 12px;
+      font-family:var(--serif);
+      font-weight: 700;
+      letter-spacing:.01em;
+      color: var(--ink-2);
+      font-size: 1.38rem;
+    }
+    .divider{
+      height:1px;
+      background: linear-gradient(90deg, transparent, var(--line), transparent);
+      margin: 12px 0 16px;
+      position:relative;
+      z-index:1;
+    }
+
+    /* Countdown */
+    .countdown{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:10px;
+      position:relative;
+      z-index:1;
+    }
+    .cd-box{
+      border-radius: 18px;
+      border: 1px solid rgba(198,167,94,.18);
+      background: rgba(255,255,255,.34);
+      padding: 14px 12px 12px;
+      text-align:center;
+      backdrop-filter: blur(10px);
+    }
+    .cd-num{
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.7rem;
+      line-height:1;
+      color: var(--ink-2);
+    }
+    .cd-lbl{
+      margin-top:6px;
+      font-size:.72rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color: rgba(44,44,44,.70);
+    }
+
+    /* Main sections */
+    main{
+      padding: 10px 0 64px;
+    }
+
+    section.block{
+      margin-top: 18px;
+      padding: 26px 0;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+    }
+    @media (max-width: 900px){
+      .grid-2{ grid-template-columns: 1fr; }
+      .countdown{ grid-template-columns: repeat(2,1fr); }
+    }
+
+    .card{
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(198,167,94,.20);
+      background: linear-gradient(180deg, rgba(255,255,255,.50), rgba(255,255,255,.22));
+      box-shadow: var(--shadow-soft);
+      padding: 22px 20px;
+      backdrop-filter: blur(12px);
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:
+        radial-gradient(460px 260px at 15% 0%, rgba(198,167,94,.14), transparent 60%),
+        radial-gradient(520px 280px at 85% 100%, rgba(255,255,255,.25), transparent 60%);
+      opacity:.70;
+      pointer-events:none;
+    }
+
+    .card h3{
+      position:relative;
+      z-index:1;
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-weight: 700;
+      letter-spacing:.01em;
+      font-size: 1.25rem;
+      color: var(--ink-2);
+    }
+    .card .time{
+      position:relative;
+      z-index:1;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:.88rem;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color: rgba(44,44,44,.70);
+      margin-bottom: 10px;
+    }
+    .card p{
+      position:relative;
+      z-index:1;
+      margin: 0;
+      color: rgba(31,31,31,.82);
+      line-height: 1.55;
+      font-size: .96rem;
+    }
+
+    .map-actions{
+      position:relative;
+      z-index:1;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 14px;
+    }
+    .btn.small{
+      padding: 10px 14px;
+      font-size: .86rem;
+    }
+
+    /* Family block */
+    .family{
+      text-align:center;
+      padding: 8px 0 0;
+    }
+    .family p{
+      margin: 0;
+      color: rgba(31,31,31,.80);
+      line-height: 1.7;
+    }
+    .family .lead{
+      font-family:var(--serif);
+      font-weight: 600;
+      font-size: 1.18rem;
+      color: rgba(44,44,44,.90);
+    }
+    .names{
+      margin-top: 10px;
+      font-family:var(--serif);
+      font-weight: 700;
+      font-size: 1.30rem;
+      color: var(--ink-2);
+    }
+    .subnames{
+      margin-top: 10px;
+      color: rgba(31,31,31,.80);
+    }
+
+    /* Dress code */
+    .dress{
+      display:grid;
+      grid-template-columns: 1fr .9fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .dress{ grid-template-columns: 1fr; }
+    }
+    .swatches{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-top: 12px;
+      position:relative;
+      z-index:1;
+    }
+    .swatch{
+      width:34px;height:34px;border-radius:999px;
+      border: 1px solid rgba(198,167,94,.22);
+      box-shadow: 0 10px 18px rgba(0,0,0,.06);
+      background: #eee;
+    }
+    .swatch.sand{ background: var(--sand-100); }
+    .swatch.beige{ background: var(--sand-300); }
+    .swatch.gold{
+      background: linear-gradient(180deg, rgba(198,167,94,.95), rgba(183,146,63,.72));
+    }
+
+    /* Forms */
+    .form-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 900px){
+      .form-grid{ grid-template-columns: 1fr; }
+    }
+    label{
+      display:block;
+      font-size:.78rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color: rgba(44,44,44,.66);
+      margin: 6px 0 8px;
+    }
+    input, select, textarea{
+      width:100%;
+      border-radius: 16px;
+      border: 1px solid rgba(198,167,94,.22);
+      background: rgba(255,255,255,.40);
+      padding: 13px 14px;
+      font-size: .95rem;
+      color: rgba(31,31,31,.92);
+      outline:none;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
+      backdrop-filter: blur(10px);
+      transition: border-color .18s ease, background .18s ease, transform .18s ease;
+    }
+    textarea{ min-height: 110px; resize: vertical; }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(198,167,94,.45);
+      background: rgba(255,255,255,.55);
+    }
+    .form-actions{
+      margin-top: 14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-start;
+      position:relative;
+      z-index:1;
+    }
+    .helper{
+      font-size:.86rem;
+      color: rgba(44,44,44,.70);
+      line-height:1.4;
+    }
+    .status{
+      margin-top: 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(198,167,94,.20);
+      background: rgba(255,255,255,.36);
+      padding: 12px 14px;
+      color: rgba(31,31,31,.84);
+      display:none;
+      position:relative;
+      z-index:1;
+    }
+    .status.show{ display:block; }
+    .status.ok{ border-color: rgba(120, 180, 120, .35); }
+    .status.bad{ border-color: rgba(220, 120, 120, .35); }
+
+    /* Footer */
+    footer{
+      padding: 26px 0 38px;
+      text-align:center;
+      color: rgba(44,44,44,.68);
+      font-size:.86rem;
+    }
+    footer .fine{
+      margin-top: 8px;
+      font-size:.78rem;
+      color: rgba(44,44,44,.55);
+    }
+
+    /* Subtle reveal */
+    .reveal{
+      opacity:0;
+      transform: translateY(12px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.show{
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    /* Icon dots */
+    .i{
+      width:10px;height:10px;border-radius:999px;
+      display:inline-block;
+      background: rgba(198,167,94,.85);
+      box-shadow: 0 10px 18px rgba(198,167,94,.20);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand" aria-label="Invitación">
+          <div class="monogram">M</div>
+          <div class="t">
+            <small>XVI Años</small>
+            <strong>Mara Blanco</strong>
+          </div>
+        </div>
+
+        <div class="navlinks" aria-label="Navegación">
+          <a class="pill" href="#ubicaciones">Ubicaciones</a>
+          <a class="pill" href="#vestimenta">Vestimenta</a>
+          <a class="pill" href="#musica">Música</a>
+          <a class="pill primary" href="#rsvp">Confirmar</a>
+        </div>
+
+        <a class="pill primary" href="#rsvp" aria-label="Ir a confirmar asistencia">
+          <span class="i"></span> Confirmar
+        </a>
+      </div>
+    </div>
+
+    <header class="hero" id="inicio">
+      <div class="hero-grid">
+        <div class="hero-card reveal">
+          <div class="kicker"><span class="dot"></span> Invitación</div>
+          <h1>XVI Años<br/>Mara Blanco</h1>
+          <p class="subtitle">18 de julio de 2026</p>
+
+          <div class="hero-meta" aria-label="Resumen del evento">
+            <div class="meta-chip"><span class="i"></span> <b>Misa</b> 18:00 hrs</div>
+            <div class="meta-chip"><span class="i"></span> <b>Recepción</b> 19:30 hrs</div>
+            <div class="meta-chip"><span class="i"></span> <b>CDMX</b> Iztapalapa</div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#rsvp">Confirmar asistencia</a>
+            <a class="btn ghost" href="#ubicaciones">Ver ubicaciones</a>
+            <a class="btn ghost" href="#musica">Escuchar música</a>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="family">
+            <p class="lead">Con la bendición de Dios y el amor de mis padres</p>
+            <div class="names">Denisse Cervantes · Horacio Blanco</div>
+            <div class="subnames">Y mi padrino: <b>Gerardo Blanco</b></div>
+          </div>
+        </div>
+
+        <aside class="side-card reveal" aria-label="Cuenta regresiva">
+          <div class="section-title">Cuenta regresiva</div>
+          <div class="divider"></div>
+
+          <div class="countdown" role="group" aria-label="Contador">
+            <div class="cd-box">
+              <div class="cd-num" id="cd-days">—</div>
+              <div class="cd-lbl">Días</div>
+            </div>
+            <div class="cd-box">
+              <div class="cd-num" id="cd-hours">—</div>
+              <div class="cd-lbl">Horas</div>
+            </div>
+            <div class="cd-box">
+              <div class="cd-num" id="cd-mins">—</div>
+              <div class="cd-lbl">Min</div>
+            </div>
+            <div class="cd-box">
+              <div class="cd-num" id="cd-secs">—</div>
+              <div class="cd-lbl">Seg</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div style="position:relative;z-index:1">
+            <div class="section-title" style="font-size:1.18rem;margin-top:0">Detalles</div>
+            <p style="margin:0;color:rgba(31,31,31,.80);line-height:1.6">
+              Colores: <b>arena</b>, <b>beige</b> y <b>dorado</b>.<br/>
+              Vestimenta: <b>Formal</b>.<br/>
+              <span style="color:rgba(44,44,44,.72)">Colores reservados:</span> blanco, dorado, beige y arena.
+            </p>
+            <div class="divider"></div>
+            <a class="btn primary" href="#rsvp" style="width:100%">Confirmar ahora</a>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <!-- Ubicaciones -->
+      <section class="block" id="ubicaciones" aria-label="Ubicaciones">
+        <div class="wrap">
+          <div class="section-title reveal" style="font-size:1.75rem;text-align:center;">Ubicaciones</div>
+          <div class="divider reveal"></div>
+
+          <div class="grid-2">
+            <article class="card reveal" aria-label="Misa">
+              <h3>Ceremonia Religiosa</h3>
+              <div class="time"><span class="i"></span> 18:00 hrs · Parroquia</div>
+              <p>
+                <b>Parroquia de María Madre de Cristo</b><br/>
+                Av. Antonio Díaz Soto y Gama Mz. 14 Lt. 39, Col. U. Hab. Vicente Guerrero,
+                Alcaldía Iztapalapa, C.P. 09200, CDMX.
+              </p>
+              <div class="map-actions">
+                <!-- REEMPLAZA con el link real de Google Maps si tienes uno -->
+                <a class="btn small primary" href="#" id="link-misa" target="_blank" rel="noopener">Ver ubicación</a>
+                <button class="btn small ghost" type="button" data-copy="Av. Antonio Díaz Soto y Gama Mz. 14 Lt. 39, Col. U. Hab. Vicente Guerrero, 09200, CDMX">
+                  Copiar dirección
+                </button>
+              </div>
+            </article>
+
+            <article class="card reveal" aria-label="Recepción">
+              <h3>Recepción</h3>
+              <div class="time"><span class="i"></span> 19:30 hrs · Salón</div>
+              <p>
+                <b>Hacienda Tezontle 2</b><br/>
+                C. Escobillera 10, Col. Área Federal Central de Abastos,
+                Alcaldía Iztapalapa, C.P. 09040, CDMX.
+              </p>
+              <div class="map-actions">
+                <!-- REEMPLAZA con el link real de Google Maps si tienes uno -->
+                <a class="btn small primary" href="#" id="link-salon" target="_blank" rel="noopener">Ver ubicación</a>
+                <button class="btn small ghost" type="button" data-copy="C. Escobillera 10, Col. Área Federal Central de Abastos, 09040, CDMX">
+                  Copiar dirección
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vestimenta -->
+      <section class="block" id="vestimenta" aria-label="Código de vestimenta">
+        <div class="dress">
+          <div class="card reveal">
+            <h3>Código de Vestimenta</h3>
+            <div class="time"><span class="i"></span> Formal</div>
+            <p>
+              Te pedimos respetar la línea elegante del evento.<br/>
+              <b>Colores reservados para la festejada:</b> blanco, dorado, beige y arena.
+            </p>
+            <div class="swatches" aria-label="Paleta sugerida">
+              <span class="swatch sand" title="Arena"></span>
+              <span class="swatch beige" title="Beige"></span>
+              <span class="swatch gold" title="Dorado"></span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>Detalles de estilo</h3>
+            <div class="time"><span class="i"></span> Elegante</div>
+            <p>
+              Estilo: <b>elegante</b> con detalles como el fotomontaje.<br/>
+              Gracias por ser parte de este momento.
+            </p>
+            <div class="divider"></div>
+            <p style="margin:0;color:rgba(44,44,44,.72);font-size:.92rem;line-height:1.6">
+              Consejo: si dudas de un tono, evita blancos/beiges/dorados muy similares a la paleta principal.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Música -->
+      <section class="block" id="musica" aria-label="Música">
+        <div class="card reveal" style="text-align:center">
+          <div class="kicker" style="margin:0 auto"><span class="dot"></span> Música</div>
+          <h3 style="font-size:1.55rem;margin-top:14px">Young and Beautiful</h3>
+          <p style="margin-top:6px">Lana del Rey</p>
+          <div class="form-actions" style="justify-content:center">
+            <!-- REEMPLAZA con tu link real de Spotify -->
+            <a class="btn primary" id="link-spotify" href="#" target="_blank" rel="noopener">Escuchar en Spotify</a>
+          </div>
+          <p style="margin-top:12px;color:rgba(44,44,44,.62);font-size:.85rem">
+            (Si no abre, revisa que tengas Spotify instalado o ábrelo en navegador.)
+          </p>
+        </div>
+      </section>
+
+      <!-- RSVP -->
+      <section class="block" id="rsvp" aria-label="Confirmación de asistencia">
+        <div class="grid-2">
+          <div class="card reveal">
+            <h3>Confirma tu asistencia</h3>
+            <p>
+              Por favor llena tus datos. Al finalizar podrás enviar tu confirmación por WhatsApp.
+            </p>
+
+            <form id="rsvp-form" novalidate>
+              <div class="form-grid">
+                <div>
+                  <label for="rsvp-nombre">Tu nombre</label>
+                  <input id="rsvp-nombre" name="nombre" placeholder="Ej. Ana López" autocomplete="name" required />
+                </div>
+                <div>
+                  <label for="rsvp-acompanante">Acompañante</label>
+                  <input id="rsvp-acompanante" name="acompanante" placeholder="Ej. Carlos" />
+                </div>
+                <div>
+                  <label for="rsvp-asistencia">¿Asistirás?</label>
+                  <select id="rsvp-asistencia" name="asistencia" required>
+                    <option value="" selected>Selecciona una opción</option>
+                    <option value="Sí">Sí, asistiré</option>
+                    <option value="No">No podré asistir</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="rsvp-telefono">Tu WhatsApp (opcional)</label>
+                  <input id="rsvp-telefono" name="telefono" placeholder="Ej. 55 1234 5678" inputmode="tel" />
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn primary" type="submit" id="btn-rsvp">Enviar confirmación</button>
+                <a class="btn ghost" href="#inicio">Volver arriba</a>
+              </div>
+
+              <div class="status" id="rsvp-status"></div>
+
+              <div class="form-actions" style="margin-top:10px">
+                <a class="btn primary" id="btn-wa" href="#" target="_blank" rel="noopener" style="display:none;">
+                  Enviar por WhatsApp
+                </a>
+                <span class="helper" id="wa-helper" style="display:none;">
+                  Se abrirá WhatsApp con tu mensaje listo para enviar.
+                </span>
+              </div>
+            </form>
+          </div>
+
+          <div class="card reveal">
+            <h3>Buenos deseos</h3>
+            <p>
+              Deja un mensaje para <b>Mara</b>. Tu mensaje se guardará con cariño.
+            </p>
+
+            <form id="wish-form" novalidate>
+              <div>
+                <label for="wish-nombre">Tu nombre</label>
+                <input id="wish-nombre" name="nombre" placeholder="Ej. Fernanda" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="wish-mensaje">Mensaje</label>
+                <textarea id="wish-mensaje" name="mensaje" placeholder="Escribe aquí tus buenos deseos…" required></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn primary" type="submit" id="btn-wish">Enviar mensaje</button>
+                <button class="btn ghost" type="button" id="btn-clear">Limpiar</button>
+              </div>
+
+              <div class="status" id="wish-status"></div>
+            </form>
+
+            <div class="divider"></div>
+
+            <p style="margin:0;color:rgba(44,44,44,.70);font-size:.90rem;line-height:1.6">
+              <b>Nota:</b> Este sitio es informativo y de confirmación. Evita compartirlo fuera de los invitados.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Links extra -->
+      <section class="block" id="links" aria-label="Enlaces">
+        <div class="card reveal" style="text-align:center">
+          <div class="kicker" style="margin:0 auto"><span class="dot"></span> Enlaces</div>
+          <h3 style="font-size:1.55rem;margin-top:14px">Accesos rápidos</h3>
+          <p style="margin-top:6px;color:rgba(31,31,31,.80)">
+            Puedes agregar aquí mesa de regalos, álbum de fotos, etc.
+          </p>
+          <div class="form-actions" style="justify-content:center">
+            <!-- REEMPLAZA estos links -->
+            <a class="btn ghost" id="link-extra-1" href="#" target="_blank" rel="noopener">Link 1</a>
+            <a class="btn ghost" id="link-extra-2" href="#" target="_blank" rel="noopener">Link 2</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Hecho con cariño para celebrar un momento inolvidable.
+      <div class="fine">Invytia · Invitaciones digitales premium</div>
+    </footer>
+  </div>
+
+  <script>
+    /**
+     * =========================
+     *  CONFIGURACIÓN (EDITA AQUÍ)
+     * =========================
+     */
+    const EVENT = {
+      celebrada: "Mara Blanco",
+      tipo: "XVI AÑOS",
+      // Importante: CDMX está en UTC-6. Para evitar desajustes, definimos hora local del evento.
+      // Aquí ponemos 18:00 como "inicio del día del evento" para el countdown (puedes cambiarlo).
+      dateTimeLocal: "2026-07-18T18:00:00", // YYYY-MM-DDTHH:mm:ss
+      parents: ["Denisse Cervantes", "Horacio Blanco"],
+      padrino: "Gerardo Blanco",
+      dressCode: "Formal",
+      restrictedColors: "blanco, dorado, beige y arena",
+      colors: ["arena", "beige", "dorado"],
+
+      misa: {
+        time: "18:00 hrs.",
+        place: "Parroquia de María Madre de Cristo",
+        address: "Av. Antonio Díaz Soto y Gama Mz. 14 Lt. 39, Col. U. Hab. Vicente Guerrero, Alcaldía Iztapalapa, C.P. 09200, CDMX.",
+        mapsUrl: "" // <-- PEGA AQUÍ el link de Google Maps (recomendado)
+      },
+      salon: {
+        time: "19:30 hrs.",
+        place: "Hacienda Tezontle 2",
+        address: "C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, C.P. 09040, CDMX.",
+        mapsUrl: "" // <-- PEGA AQUÍ el link de Google Maps (recomendado)
+      },
+
+      // WhatsApp del anfitrión / confirmaciones (formato internacional sin +, ejemplo México: 52155xxxxxxx)
+      whatsappTo: "5215500000000", // <-- CAMBIA ESTO
+
+      // Spotify (link a la canción)
+      spotifyUrl: "", // <-- PEGA AQUÍ
+
+      // Links extra
+      extraLinks: [
+        { label: "Mesa de regalos", url: "" },
+        { label: "Álbum / Fotos", url: "" }
+      ],
+
+      // Apps Script Web App endpoint (para guardar RSVP y/o deseos)
+      // Si aún no lo tienes, déjalo vacío y el form funcionará “local” (sin guardar).
+      appsScriptEndpoint: "" // <-- PEGA AQUÍ TU URL
+    };
+
+    /**
+     * =========================
+     *  UTILIDADES
+     * =========================
+     */
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+    function pad2(n){ return String(n).padStart(2,"0"); }
+
+    function safeText(s){
+      return String(s || "").replace(/\s+/g, " ").trim();
+    }
+
+    function buildWhatsAppMessage({ invitado, acompanante }) {
+      const nombre = safeText(invitado);
+      const acomp = safeText(acompanante);
+      return `Hola, confirmo mi asistencia a los ${EVENT.tipo.toLowerCase()} de ${EVENT.celebrada}. Mi nombre es: ${nombre}. Nombre del acompañante: ${acomp || "—"} . ¡Gracias!`;
+    }
+
+    function waLink(message){
+      const base = `https://wa.me/${EVENT.whatsappTo}`;
+      const text = encodeURIComponent(message);
+      return `${base}?text=${text}`;
+    }
+
+    async function postToAppsScript(payload){
+      if(!EVENT.appsScriptEndpoint) {
+        return { ok: true, skipped: true };
+      }
+
+      // En la práctica, Apps Script acepta bien 'application/json' si lo parseas.
+      // Si tu script actual espera form-data, me dices y lo ajustamos.
+      const res = await fetch(EVENT.appsScriptEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+        mode: "cors"
+      });
+
+      // A veces Apps Script responde texto; intentamos JSON y si falla, devolvemos texto
+      const ct = (res.headers.get("content-type") || "").toLowerCase();
+      if(ct.includes("application/json")){
+        const data = await res.json().catch(()=> ({}));
+        return { ok: res.ok, data };
+      } else {
+        const text = await res.text().catch(()=> "");
+        return { ok: res.ok, text };
+      }
+    }
+
+    function setStatus(el, type, msg){
+      el.classList.remove("ok","bad","show");
+      el.classList.add("show");
+      if(type === "ok") el.classList.add("ok");
+      if(type === "bad") el.classList.add("bad");
+      el.textContent = msg;
+    }
+
+    /**
+     * =========================
+     *  CONTEO REGRESIVO
+     * =========================
+     */
+    function startCountdown(){
+      const tDays = $("#cd-days");
+      const tHours = $("#cd-hours");
+      const tMins = $("#cd-mins");
+      const tSecs = $("#cd-secs");
+
+      const target = new Date(EVENT.dateTimeLocal);
+
+      const tick = () => {
+        const now = new Date();
+        let diff = Math.max(0, target.getTime() - now.getTime());
+
+        const totalSeconds = Math.floor(diff / 1000);
+        const days = Math.floor(totalSeconds / 86400);
+        const hours = Math.floor((totalSeconds % 86400) / 3600);
+        const mins = Math.floor((totalSeconds % 3600) / 60);
+        const secs = totalSeconds % 60;
+
+        tDays.textContent = String(days);
+        tHours.textContent = pad2(hours);
+        tMins.textContent = pad2(mins);
+        tSecs.textContent = pad2(secs);
+
+        if(diff <= 0){
+          // Evento iniciado
+          // Podrías cambiar el texto si quieres
+        }
+      };
+
+      tick();
+      setInterval(tick, 1000);
+    }
+
+    /**
+     * =========================
+     *  COPIAR DIRECCIÓN
+     * =========================
+     */
+    function setupCopy(){
+      $$("[data-copy]").forEach(btn=>{
+        btn.addEventListener("click", async ()=>{
+          const text = btn.getAttribute("data-copy") || "";
+          try{
+            await navigator.clipboard.writeText(text);
+            const old = btn.textContent;
+            btn.textContent = "Copiado ✓";
+            setTimeout(()=> btn.textContent = old, 1200);
+          }catch(e){
+            alert("No se pudo copiar. Mantén presionado y copia manualmente.");
+          }
+        });
+      });
+    }
+
+    /**
+     * =========================
+     *  LINKS CONFIG
+     * =========================
+     */
+    function applyLinks(){
+      const misa = $("#link-misa");
+      const salon = $("#link-salon");
+      const spotify = $("#link-spotify");
+
+      misa.href = EVENT.misa.mapsUrl || "#";
+      salon.href = EVENT.salon.mapsUrl || "#";
+      spotify.href = EVENT.spotifyUrl || "#";
+
+      if(!EVENT.misa.mapsUrl) misa.classList.add("ghost");
+      if(!EVENT.salon.mapsUrl) salon.classList.add("ghost");
+      if(!EVENT.spotifyUrl) spotify.classList.add("ghost");
+
+      const l1 = $("#link-extra-1");
+      const l2 = $("#link-extra-2");
+
+      l1.textContent = EVENT.extraLinks?.[0]?.label || "Link 1";
+      l1.href = EVENT.extraLinks?.[0]?.url || "#";
+
+      l2.textContent = EVENT.extraLinks?.[1]?.label || "Link 2";
+      l2.href = EVENT.extraLinks?.[1]?.url || "#";
+    }
+
+    /**
+     * =========================
+     *  RSVP + WHATSAPP
+     * =========================
+     */
+    function setupRSVP(){
+      const form = $("#rsvp-form");
+      const status = $("#rsvp-status");
+      const btn = $("#btn-rsvp");
+
+      const waBtn = $("#btn-wa");
+      const waHelper = $("#wa-helper");
+
+      form.addEventListener("submit", async (e)=>{
+        e.preventDefault();
+
+        const nombre = safeText($("#rsvp-nombre").value);
+        const acompanante = safeText($("#rsvp-acompanante").value);
+        const asistencia = safeText($("#rsvp-asistencia").value);
+        const telefono = safeText($("#rsvp-telefono").value);
+
+        if(!nombre){
+          setStatus(status, "bad", "Por favor escribe tu nombre.");
+          $("#rsvp-nombre").focus();
+          return;
+        }
+        if(!asistencia){
+          setStatus(status, "bad", "Por favor selecciona si asistirás.");
+          $("#rsvp-asistencia").focus();
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = "Enviando…";
+
+        const payload = {
+          type: "rsvp",
+          celebrada: EVENT.celebrada,
+          evento: EVENT.tipo,
+          fecha: "2026-07-18",
+          nombre,
+          acompanante,
+          asistencia,
+          telefono,
+          createdAt: new Date().toISOString(),
+          source: "github-pages"
+        };
+
+        try{
+          const result = await postToAppsScript(payload);
+
+          if(result.ok){
+            const msg = EVENT.appsScriptEndpoint
+              ? "Confirmación enviada. Gracias por acompañarnos."
+              : "Confirmación lista. (Aún falta conectar Google Sheets).";
+
+            setStatus(status, "ok", msg);
+
+            // WhatsApp
+            const text = buildWhatsAppMessage({ invitado: nombre, acompanante });
+            waBtn.href = waLink(text);
+            waBtn.style.display = "inline-flex";
+            waHelper.style.display = "inline";
+          }else{
+            setStatus(status, "bad", "No se pudo guardar tu confirmación. Intenta de nuevo.");
+          }
+        }catch(err){
+          setStatus(status, "bad", "Error de conexión. Intenta de nuevo.");
+        }finally{
+          btn.disabled = false;
+          btn.textContent = "Enviar confirmación";
+        }
+      });
+    }
+
+    /**
+     * =========================
+     *  BUENOS DESEOS
+     * =========================
+     */
+    function setupWishes(){
+      const form = $("#wish-form");
+      const status = $("#wish-status");
+      const btn = $("#btn-wish");
+      const clear = $("#btn-clear");
+
+      clear.addEventListener("click", ()=>{
+        $("#wish-nombre").value = "";
+        $("#wish-mensaje").value = "";
+        status.classList.remove("show","ok","bad");
+      });
+
+      form.addEventListener("submit", async (e)=>{
+        e.preventDefault();
+
+        const nombre = safeText($("#wish-nombre").value);
+        const mensaje = safeText($("#wish-mensaje").value);
+
+        if(!nombre){
+          setStatus(status, "bad", "Por favor escribe tu nombre.");
+          $("#wish-nombre").focus();
+          return;
+        }
+        if(!mensaje || mensaje.length < 3){
+          setStatus(status, "bad", "Por favor escribe un mensaje.");
+          $("#wish-mensaje").focus();
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = "Enviando…";
+
+        const payload = {
+          type: "wish",
+          celebrada: EVENT.celebrada,
+          evento: EVENT.tipo,
+          fecha: "2026-07-18",
+          nombre,
+          mensaje,
+          createdAt: new Date().toISOString(),
+          source: "github-pages"
+        };
+
+        try{
+          const result = await postToAppsScript(payload);
+
+          if(result.ok){
+            const msg = EVENT.appsScriptEndpoint
+              ? "Mensaje enviado. Gracias por tus buenos deseos."
+              : "Mensaje listo. (Aún falta conectar Google Sheets).";
+
+            setStatus(status, "ok", msg);
+            $("#wish-mensaje").value = "";
+          }else{
+            setStatus(status, "bad", "No se pudo guardar tu mensaje. Intenta de nuevo.");
+          }
+        }catch(err){
+          setStatus(status, "bad", "Error de conexión. Intenta de nuevo.");
+        }finally{
+          btn.disabled = false;
+          btn.textContent = "Enviar mensaje";
+        }
+      });
+    }
+
+    /**
+     * =========================
+     *  REVEAL (animación)
+     * =========================
+     */
+    function setupReveal(){
+      const els = $$(".reveal");
+      const io = new IntersectionObserver((entries)=>{
+        for(const e of entries){
+          if(e.isIntersecting){
+            e.target.classList.add("show");
+            io.unobserve(e.target);
+          }
+        }
+      }, { threshold: .12 });
+
+      els.forEach(el=> io.observe(el));
+    }
+
+    /**
+     * =========================
+     *  INIT
+     * =========================
+     */
+    applyLinks();
+    setupCopy();
+    startCountdown();
+    setupRSVP();
+    setupWishes();
+    setupReveal();
+
+    // Smooth anchor scrolling
+    $$('a[href^="#"]').forEach(a=>{
+      a.addEventListener("click", (e)=>{
+        const id = a.getAttribute("href");
+        if(!id || id === "#") return;
+        const target = document.querySelector(id);
+        if(!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior:"smooth", block:"start" });
+      });
+    });
+  </script>
+</body>
+</html>
