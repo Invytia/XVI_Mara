@@ -6,18 +6,20 @@
   <meta name="theme-color" content="#f5efe6" />
   <title>XVI Años | Mara Blanco | 18 de julio de 2026</title>
   <meta name="description" content="Invitación digital premium para los XVI años de Mara Blanco. 18 de julio de 2026." />
+
   <meta property="og:title" content="XVI Años | Mara Blanco" />
   <meta property="og:description" content="Acompáñanos el 18 de julio de 2026." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <!-- Tipos premium: editorial serif + sans moderna -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     :root{
-      /* Palette */
       --sand-50:#fbf7f0;
       --sand-100:#f5efe6;
       --sand-200:#efe4d6;
@@ -59,7 +61,6 @@
       overflow-x:hidden;
     }
 
-    /* Decorative grain */
     body::before{
       content:"";
       position:fixed;
@@ -116,7 +117,17 @@
       font-weight:700;
       letter-spacing:.02em;
       color:var(--ink-2);
+      overflow:hidden;
     }
+    .monogram-logo{ padding:6px; }
+    .monogram-logo img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.10));
+    }
+
     .brand .t{
       display:flex;
       flex-direction:column;
@@ -207,6 +218,61 @@
         radial-gradient(520px 280px at 20% 80%, rgba(255,255,255,.32), transparent 66%);
       pointer-events:none;
       opacity:.55;
+    }
+
+    /* HERO FULL PHOTO */
+    .hero-card.hero-photo{
+      min-height: 520px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:flex-start;
+    }
+    .hero-img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      transform: scale(1.02);
+      filter: contrast(1.02) saturate(1.02);
+    }
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.28) 40%, rgba(0,0,0,.62) 100%),
+        radial-gradient(600px 420px at 20% 15%, rgba(198,167,94,.26), transparent 60%);
+    }
+    .hero-content{
+      position:relative;
+      z-index:2;
+      width:100%;
+      color: rgba(255,255,255,.92);
+      text-shadow: 0 10px 24px rgba(0,0,0,.25);
+    }
+    .hero-photo h1{ color:#fff; }
+    .hero-photo .subtitle{ color:rgba(255,255,255,.86); }
+    .hero-photo .meta-chip{
+      background: rgba(255,255,255,.16);
+      border-color: rgba(255,255,255,.22);
+      color: rgba(255,255,255,.86);
+    }
+    .hero-photo .meta-chip b{ color:#fff; }
+    .hero-photo .btn.ghost{
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.22);
+      color: rgba(255,255,255,.92);
+    }
+    .hero-photo .divider{
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.32), transparent);
+    }
+    .hero-photo .family .lead,
+    .hero-photo .family .subnames,
+    .hero-photo .family p{ color:rgba(255,255,255,.86); }
+    .hero-photo .family .names{ color:#fff; }
+    @media (max-width: 900px){
+      .hero-card.hero-photo{ min-height: 540px; padding: 28px 20px; }
     }
 
     .kicker{
@@ -315,7 +381,6 @@
     .btn:hover{ transform: translateY(-2px); }
     .btn:active{ transform: translateY(0px); filter: brightness(.98); }
 
-    /* Right hero panel */
     .side-card{
       border-radius: var(--radius-lg);
       border: 1px solid rgba(198,167,94,.22);
@@ -355,7 +420,6 @@
       z-index:1;
     }
 
-    /* Countdown */
     .countdown{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
@@ -386,15 +450,8 @@
       color: rgba(44,44,44,.70);
     }
 
-    /* Main sections */
-    main{
-      padding: 10px 0 64px;
-    }
-
-    section.block{
-      margin-top: 18px;
-      padding: 26px 0;
-    }
+    main{ padding: 10px 0 64px; }
+    section.block{ margin-top: 18px; padding: 26px 0; }
 
     .grid-2{
       display:grid;
@@ -458,6 +515,21 @@
       font-size: .96rem;
     }
 
+    .card-img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-radius: 20px;
+      border: 1px solid rgba(198,167,94,.18);
+      box-shadow: 0 16px 34px rgba(0,0,0,.10);
+      margin-bottom: 14px;
+      position:relative;
+      z-index:1;
+    }
+    @media (max-width:900px){
+      .card-img{ height:200px; }
+    }
+
     .map-actions{
       position:relative;
       z-index:1;
@@ -471,7 +543,6 @@
       font-size: .86rem;
     }
 
-    /* Family block */
     .family{
       text-align:center;
       padding: 8px 0 0;
@@ -499,7 +570,6 @@
       color: rgba(31,31,31,.80);
     }
 
-    /* Dress code */
     .dress{
       display:grid;
       grid-template-columns: 1fr .9fr;
@@ -530,7 +600,6 @@
       background: linear-gradient(180deg, rgba(198,167,94,.95), rgba(183,146,63,.72));
     }
 
-    /* Forms */
     .form-grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -595,7 +664,32 @@
     .status.ok{ border-color: rgba(120, 180, 120, .35); }
     .status.bad{ border-color: rgba(220, 120, 120, .35); }
 
-    /* Footer */
+    /* Gallery */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap:10px;
+      margin-top:16px;
+      position:relative;
+      z-index:1;
+    }
+    .gallery-grid img{
+      width:100%;
+      aspect-ratio: 3/4;
+      object-fit:cover;
+      border-radius: 18px;
+      border:1px solid rgba(198,167,94,.18);
+      box-shadow: 0 14px 30px rgba(0,0,0,.10);
+      transition: transform .18s ease;
+    }
+    .gallery-grid img:hover{ transform: translateY(-2px); }
+    @media (max-width: 1100px){
+      .gallery-grid{ grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 700px){
+      .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+
     footer{
       padding: 26px 0 38px;
       text-align:center;
@@ -608,7 +702,6 @@
       color: rgba(44,44,44,.55);
     }
 
-    /* Subtle reveal */
     .reveal{
       opacity:0;
       transform: translateY(12px);
@@ -619,7 +712,6 @@
       transform: translateY(0);
     }
 
-    /* Icon dots */
     .i{
       width:10px;height:10px;border-radius:999px;
       display:inline-block;
@@ -634,7 +726,9 @@
     <div class="topbar">
       <div class="topbar-inner">
         <div class="brand" aria-label="Invitación">
-          <div class="monogram">M</div>
+          <div class="monogram monogram-logo" aria-label="Invytia">
+            <img src="assets/logo-invytia.png" alt="Invytia" />
+          </div>
           <div class="t">
             <small>XVI Años</small>
             <strong>Mara Blanco</strong>
@@ -644,6 +738,7 @@
         <div class="navlinks" aria-label="Navegación">
           <a class="pill" href="#ubicaciones">Ubicaciones</a>
           <a class="pill" href="#vestimenta">Vestimenta</a>
+          <a class="pill" href="#galeria">Galería</a>
           <a class="pill" href="#musica">Música</a>
           <a class="pill primary" href="#rsvp">Confirmar</a>
         </div>
@@ -656,29 +751,36 @@
 
     <header class="hero" id="inicio">
       <div class="hero-grid">
-        <div class="hero-card reveal">
-          <div class="kicker"><span class="dot"></span> Invitación</div>
-          <h1>XVI Años<br/>Mara Blanco</h1>
-          <p class="subtitle">18 de julio de 2026</p>
+        <!-- HERO CON FOTO -->
+        <div class="hero-card hero-photo reveal">
+          <img class="hero-img" src="assets/hero-mara.jpg" alt="Mara Blanco" loading="eager" />
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
 
-          <div class="hero-meta" aria-label="Resumen del evento">
-            <div class="meta-chip"><span class="i"></span> <b>Misa</b> 18:00 hrs</div>
-            <div class="meta-chip"><span class="i"></span> <b>Recepción</b> 19:30 hrs</div>
-            <div class="meta-chip"><span class="i"></span> <b>CDMX</b> Iztapalapa</div>
-          </div>
+            <div class="kicker"><span class="dot"></span> Invitación</div>
+            <h1>XVI Años<br/>Mara Blanco</h1>
+            <p class="subtitle">18 de julio de 2026</p>
 
-          <div class="hero-actions">
-            <a class="btn primary" href="#rsvp">Confirmar asistencia</a>
-            <a class="btn ghost" href="#ubicaciones">Ver ubicaciones</a>
-            <a class="btn ghost" href="#musica">Escuchar música</a>
-          </div>
+            <div class="hero-meta" aria-label="Resumen del evento">
+              <div class="meta-chip"><span class="i"></span> <b>Misa</b> 18:00 hrs</div>
+              <div class="meta-chip"><span class="i"></span> <b>Recepción</b> 19:30 hrs</div>
+              <div class="meta-chip"><span class="i"></span> <b>CDMX</b> Iztapalapa</div>
+            </div>
 
-          <div class="divider"></div>
+            <div class="hero-actions">
+              <a class="btn primary" href="#rsvp">Confirmar asistencia</a>
+              <a class="btn ghost" href="#ubicaciones">Ver ubicaciones</a>
+              <a class="btn ghost" href="#musica">Escuchar música</a>
+            </div>
 
-          <div class="family">
-            <p class="lead">Con la bendición de Dios y el amor de mis padres</p>
-            <div class="names">Denisse Cervantes · Horacio Blanco</div>
-            <div class="subnames">Y mi padrino: <b>Gerardo Blanco</b></div>
+            <div class="divider"></div>
+
+            <div class="family">
+              <p class="lead">Con la bendición de Dios y el amor de mis padres</p>
+              <div class="names">Denisse Cervantes · Horacio Blanco</div>
+              <div class="subnames">Y mi padrino: <b>Gerardo Blanco</b></div>
+            </div>
+
           </div>
         </div>
 
@@ -730,6 +832,7 @@
 
           <div class="grid-2">
             <article class="card reveal" aria-label="Misa">
+              <img class="card-img" src="assets/misa.jpg" alt="Parroquia de María Madre de Cristo" loading="lazy">
               <h3>Ceremonia Religiosa</h3>
               <div class="time"><span class="i"></span> 18:00 hrs · Parroquia</div>
               <p>
@@ -738,7 +841,6 @@
                 Alcaldía Iztapalapa, C.P. 09200, CDMX.
               </p>
               <div class="map-actions">
-                <!-- REEMPLAZA con el link real de Google Maps si tienes uno -->
                 <a class="btn small primary" href="#" id="link-misa" target="_blank" rel="noopener">Ver ubicación</a>
                 <button class="btn small ghost" type="button" data-copy="Av. Antonio Díaz Soto y Gama Mz. 14 Lt. 39, Col. U. Hab. Vicente Guerrero, 09200, CDMX">
                   Copiar dirección
@@ -747,6 +849,7 @@
             </article>
 
             <article class="card reveal" aria-label="Recepción">
+              <img class="card-img" src="assets/salon.jpg" alt="Hacienda Tezontle 2" loading="lazy">
               <h3>Recepción</h3>
               <div class="time"><span class="i"></span> 19:30 hrs · Salón</div>
               <p>
@@ -755,7 +858,6 @@
                 Alcaldía Iztapalapa, C.P. 09040, CDMX.
               </p>
               <div class="map-actions">
-                <!-- REEMPLAZA con el link real de Google Maps si tienes uno -->
                 <a class="btn small primary" href="#" id="link-salon" target="_blank" rel="noopener">Ver ubicación</a>
                 <button class="btn small ghost" type="button" data-copy="C. Escobillera 10, Col. Área Federal Central de Abastos, 09040, CDMX">
                   Copiar dirección
@@ -798,18 +900,43 @@
         </div>
       </section>
 
+      <!-- Galería -->
+      <section class="block" id="galeria" aria-label="Galería">
+        <div class="card reveal">
+          <div class="kicker" style="margin:0 auto"><span class="dot"></span> Galería</div>
+          <h3 style="text-align:center;font-size:1.55rem;margin-top:14px">Momentos</h3>
+
+          <div class="gallery-grid">
+            <img src="assets/gallery/gallery-01.jpg" alt="Galería 1" loading="lazy">
+            <img src="assets/gallery/gallery-02.jpg" alt="Galería 2" loading="lazy">
+            <img src="assets/gallery/gallery-03.jpg" alt="Galería 3" loading="lazy">
+            <img src="assets/gallery/gallery-04.jpg" alt="Galería 4" loading="lazy">
+            <img src="assets/gallery/gallery-05.jpg" alt="Galería 5" loading="lazy">
+            <img src="assets/gallery/gallery-06.jpg" alt="Galería 6" loading="lazy">
+            <img src="assets/gallery/gallery-07.jpg" alt="Galería 7" loading="lazy">
+          </div>
+        </div>
+      </section>
+
       <!-- Música -->
       <section class="block" id="musica" aria-label="Música">
         <div class="card reveal" style="text-align:center">
           <div class="kicker" style="margin:0 auto"><span class="dot"></span> Música</div>
           <h3 style="font-size:1.55rem;margin-top:14px">Young and Beautiful</h3>
           <p style="margin-top:6px">Lana del Rey</p>
+
           <div class="form-actions" style="justify-content:center">
-            <!-- REEMPLAZA con tu link real de Spotify -->
             <a class="btn primary" id="link-spotify" href="#" target="_blank" rel="noopener">Escuchar en Spotify</a>
           </div>
+
+          <audio id="audio" src="assets/song.mp3" preload="none"></audio>
+          <div class="form-actions" style="justify-content:center">
+            <button class="btn ghost" type="button" id="btn-play">Reproducir</button>
+            <button class="btn ghost" type="button" id="btn-pause">Pausar</button>
+          </div>
+
           <p style="margin-top:12px;color:rgba(44,44,44,.62);font-size:.85rem">
-            (Si no abre, revisa que tengas Spotify instalado o ábrelo en navegador.)
+            (Si no abre Spotify, puedes reproducir el audio aquí.)
           </p>
         </div>
       </section>
@@ -819,9 +946,7 @@
         <div class="grid-2">
           <div class="card reveal">
             <h3>Confirma tu asistencia</h3>
-            <p>
-              Por favor llena tus datos. Al finalizar podrás enviar tu confirmación por WhatsApp.
-            </p>
+            <p>Por favor llena tus datos. Al finalizar podrás enviar tu confirmación por WhatsApp.</p>
 
             <form id="rsvp-form" novalidate>
               <div class="form-grid">
@@ -867,9 +992,7 @@
 
           <div class="card reveal">
             <h3>Buenos deseos</h3>
-            <p>
-              Deja un mensaje para <b>Mara</b>. Tu mensaje se guardará con cariño.
-            </p>
+            <p>Deja un mensaje para <b>Mara</b>. Tu mensaje se guardará con cariño.</p>
 
             <form id="wish-form" novalidate>
               <div>
@@ -907,7 +1030,6 @@
             Puedes agregar aquí mesa de regalos, álbum de fotos, etc.
           </p>
           <div class="form-actions" style="justify-content:center">
-            <!-- REEMPLAZA estos links -->
             <a class="btn ghost" id="link-extra-1" href="#" target="_blank" rel="noopener">Link 1</a>
             <a class="btn ghost" id="link-extra-2" href="#" target="_blank" rel="noopener">Link 2</a>
           </div>
@@ -930,65 +1052,36 @@
     const EVENT = {
       celebrada: "Mara Blanco",
       tipo: "XVI AÑOS",
-      // Importante: CDMX está en UTC-6. Para evitar desajustes, definimos hora local del evento.
-      // Aquí ponemos 18:00 como "inicio del día del evento" para el countdown (puedes cambiarlo).
-      dateTimeLocal: "2026-07-18T18:00:00", // YYYY-MM-DDTHH:mm:ss
-      parents: ["Denisse Cervantes", "Horacio Blanco"],
-      padrino: "Gerardo Blanco",
-      dressCode: "Formal",
-      restrictedColors: "blanco, dorado, beige y arena",
-      colors: ["arena", "beige", "dorado"],
+      dateTimeLocal: "2026-07-18T18:00:00",
 
       misa: {
-        time: "18:00 hrs.",
-        place: "Parroquia de María Madre de Cristo",
-        address: "Av. Antonio Díaz Soto y Gama Mz. 14 Lt. 39, Col. U. Hab. Vicente Guerrero, Alcaldía Iztapalapa, C.P. 09200, CDMX.",
-        mapsUrl: "" // <-- PEGA AQUÍ el link de Google Maps (recomendado)
+        mapsUrl: "" // <-- pega link Google Maps misa
       },
       salon: {
-        time: "19:30 hrs.",
-        place: "Hacienda Tezontle 2",
-        address: "C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, C.P. 09040, CDMX.",
-        mapsUrl: "" // <-- PEGA AQUÍ el link de Google Maps (recomendado)
+        mapsUrl: "" // <-- pega link Google Maps salón
       },
 
-      // WhatsApp del anfitrión / confirmaciones (formato internacional sin +, ejemplo México: 52155xxxxxxx)
-      whatsappTo: "5215500000000", // <-- CAMBIA ESTO
+      whatsappTo: "5215500000000", // <-- cambia esto
+      spotifyUrl: "", // <-- pega link Spotify
 
-      // Spotify (link a la canción)
-      spotifyUrl: "", // <-- PEGA AQUÍ
-
-      // Links extra
       extraLinks: [
         { label: "Mesa de regalos", url: "" },
         { label: "Álbum / Fotos", url: "" }
       ],
 
-      // Apps Script Web App endpoint (para guardar RSVP y/o deseos)
-      // Si aún no lo tienes, déjalo vacío y el form funcionará “local” (sin guardar).
-      appsScriptEndpoint: "" // <-- PEGA AQUÍ TU URL
+      appsScriptEndpoint: "" // <-- pega tu Web App de Apps Script
     };
 
-    /**
-     * =========================
-     *  UTILIDADES
-     * =========================
-     */
     const $ = (sel, root=document) => root.querySelector(sel);
     const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
-
     function pad2(n){ return String(n).padStart(2,"0"); }
-
-    function safeText(s){
-      return String(s || "").replace(/\s+/g, " ").trim();
-    }
+    function safeText(s){ return String(s || "").replace(/\s+/g, " ").trim(); }
 
     function buildWhatsAppMessage({ invitado, acompanante }) {
       const nombre = safeText(invitado);
       const acomp = safeText(acompanante);
       return `Hola, confirmo mi asistencia a los ${EVENT.tipo.toLowerCase()} de ${EVENT.celebrada}. Mi nombre es: ${nombre}. Nombre del acompañante: ${acomp || "—"} . ¡Gracias!`;
     }
-
     function waLink(message){
       const base = `https://wa.me/${EVENT.whatsappTo}`;
       const text = encodeURIComponent(message);
@@ -996,20 +1089,13 @@
     }
 
     async function postToAppsScript(payload){
-      if(!EVENT.appsScriptEndpoint) {
-        return { ok: true, skipped: true };
-      }
-
-      // En la práctica, Apps Script acepta bien 'application/json' si lo parseas.
-      // Si tu script actual espera form-data, me dices y lo ajustamos.
+      if(!EVENT.appsScriptEndpoint) return { ok: true, skipped: true };
       const res = await fetch(EVENT.appsScriptEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
         mode: "cors"
       });
-
-      // A veces Apps Script responde texto; intentamos JSON y si falla, devolvemos texto
       const ct = (res.headers.get("content-type") || "").toLowerCase();
       if(ct.includes("application/json")){
         const data = await res.json().catch(()=> ({}));
@@ -1028,11 +1114,6 @@
       el.textContent = msg;
     }
 
-    /**
-     * =========================
-     *  CONTEO REGRESIVO
-     * =========================
-     */
     function startCountdown(){
       const tDays = $("#cd-days");
       const tHours = $("#cd-hours");
@@ -1044,7 +1125,6 @@
       const tick = () => {
         const now = new Date();
         let diff = Math.max(0, target.getTime() - now.getTime());
-
         const totalSeconds = Math.floor(diff / 1000);
         const days = Math.floor(totalSeconds / 86400);
         const hours = Math.floor((totalSeconds % 86400) / 3600);
@@ -1055,22 +1135,12 @@
         tHours.textContent = pad2(hours);
         tMins.textContent = pad2(mins);
         tSecs.textContent = pad2(secs);
-
-        if(diff <= 0){
-          // Evento iniciado
-          // Podrías cambiar el texto si quieres
-        }
       };
 
       tick();
       setInterval(tick, 1000);
     }
 
-    /**
-     * =========================
-     *  COPIAR DIRECCIÓN
-     * =========================
-     */
     function setupCopy(){
       $$("[data-copy]").forEach(btn=>{
         btn.addEventListener("click", async ()=>{
@@ -1087,44 +1157,23 @@
       });
     }
 
-    /**
-     * =========================
-     *  LINKS CONFIG
-     * =========================
-     */
     function applyLinks(){
-      const misa = $("#link-misa");
-      const salon = $("#link-salon");
-      const spotify = $("#link-spotify");
-
-      misa.href = EVENT.misa.mapsUrl || "#";
-      salon.href = EVENT.salon.mapsUrl || "#";
-      spotify.href = EVENT.spotifyUrl || "#";
-
-      if(!EVENT.misa.mapsUrl) misa.classList.add("ghost");
-      if(!EVENT.salon.mapsUrl) salon.classList.add("ghost");
-      if(!EVENT.spotifyUrl) spotify.classList.add("ghost");
+      $("#link-misa").href = EVENT.misa.mapsUrl || "#";
+      $("#link-salon").href = EVENT.salon.mapsUrl || "#";
+      $("#link-spotify").href = EVENT.spotifyUrl || "#";
 
       const l1 = $("#link-extra-1");
       const l2 = $("#link-extra-2");
-
       l1.textContent = EVENT.extraLinks?.[0]?.label || "Link 1";
       l1.href = EVENT.extraLinks?.[0]?.url || "#";
-
       l2.textContent = EVENT.extraLinks?.[1]?.label || "Link 2";
       l2.href = EVENT.extraLinks?.[1]?.url || "#";
     }
 
-    /**
-     * =========================
-     *  RSVP + WHATSAPP
-     * =========================
-     */
     function setupRSVP(){
       const form = $("#rsvp-form");
       const status = $("#rsvp-status");
       const btn = $("#btn-rsvp");
-
       const waBtn = $("#btn-wa");
       const waHelper = $("#wa-helper");
 
@@ -1170,10 +1219,8 @@
             const msg = EVENT.appsScriptEndpoint
               ? "Confirmación enviada. Gracias por acompañarnos."
               : "Confirmación lista. (Aún falta conectar Google Sheets).";
-
             setStatus(status, "ok", msg);
 
-            // WhatsApp
             const text = buildWhatsAppMessage({ invitado: nombre, acompanante });
             waBtn.href = waLink(text);
             waBtn.style.display = "inline-flex";
@@ -1190,11 +1237,6 @@
       });
     }
 
-    /**
-     * =========================
-     *  BUENOS DESEOS
-     * =========================
-     */
     function setupWishes(){
       const form = $("#wish-form");
       const status = $("#wish-status");
@@ -1245,7 +1287,6 @@
             const msg = EVENT.appsScriptEndpoint
               ? "Mensaje enviado. Gracias por tus buenos deseos."
               : "Mensaje listo. (Aún falta conectar Google Sheets).";
-
             setStatus(status, "ok", msg);
             $("#wish-mensaje").value = "";
           }else{
@@ -1260,11 +1301,6 @@
       });
     }
 
-    /**
-     * =========================
-     *  REVEAL (animación)
-     * =========================
-     */
     function setupReveal(){
       const els = $$(".reveal");
       const io = new IntersectionObserver((entries)=>{
@@ -1275,23 +1311,29 @@
           }
         }
       }, { threshold: .12 });
-
       els.forEach(el=> io.observe(el));
     }
 
-    /**
-     * =========================
-     *  INIT
-     * =========================
-     */
+    function setupAudio(){
+      const audio = document.getElementById("audio");
+      const play = document.getElementById("btn-play");
+      const pause = document.getElementById("btn-pause");
+      if(audio && play && pause){
+        play.addEventListener("click", () => audio.play().catch(()=>{}));
+        pause.addEventListener("click", () => audio.pause());
+      }
+    }
+
+    // INIT
     applyLinks();
     setupCopy();
     startCountdown();
     setupRSVP();
     setupWishes();
     setupReveal();
+    setupAudio();
 
-    // Smooth anchor scrolling
+    // Smooth anchors
     $$('a[href^="#"]').forEach(a=>{
       a.addEventListener("click", (e)=>{
         const id = a.getAttribute("href");
