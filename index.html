@@ -16,10 +16,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <!-- Editorial -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <!-- Manuscrita para el sobre -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+
+  <!-- Script premium LEGIBLE (evita leer "XV Jaños") -->
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet" />
 
   <style>
     :root{
@@ -41,7 +43,7 @@
 
       --serif: "Cormorant Garamond", serif;
       --sans: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      --script: "Great Vibes", cursive;
+      --script: "Allura", cursive;
 
       --max: 1080px;
     }
@@ -130,9 +132,10 @@
     }
     .intro-title .line1{
       font-family: var(--script);
-      font-size: clamp(2.2rem, 5vw, 3.1rem);
+      font-size: clamp(2.3rem, 5.2vw, 3.25rem);
       line-height: .95;
       margin-bottom: 4px;
+      letter-spacing: .01em;
     }
     .intro-title .line2{
       font-family: var(--serif);
@@ -241,12 +244,8 @@
       text-shadow: 0 10px 20px rgba(0,0,0,.12);
     }
 
-    .intro.opening .env-flap{
-      transform: rotateX(-155deg);
-    }
-    .intro.opening .env-letter{
-      transform: translateY(-22px);
-    }
+    .intro.opening .env-flap{ transform: rotateX(-155deg); }
+    .intro.opening .env-letter{ transform: translateY(-22px); }
 
     @media (max-width: 520px){
       .envelope{ height: 300px; }
@@ -411,7 +410,7 @@
     }
 
     h1{
-      margin: 8px 0 10px; /* sin el badge "Invitación" */
+      margin: 8px 0 10px;
       font-family: var(--serif);
       font-weight: 700;
       letter-spacing: .01em;
@@ -438,7 +437,6 @@
       line-height:1.65;
       color: rgba(255,255,255,.90);
     }
-    /* subtítulos con misma fuente (serif) */
     .family .lead{
       font-family:var(--serif);
       font-weight: 600;
@@ -692,7 +690,7 @@
       background: linear-gradient(180deg, rgba(198,167,94,.95), rgba(183,146,63,.72));
     }
 
-    /* Kicker para secciones (antes se veía blanco) */
+    /* Kicker para secciones */
     .kicker-soft{
       display:inline-flex;
       align-items:center;
@@ -966,10 +964,10 @@
         <div class="hint">Toca el sello para abrir</div>
       </div>
 
-      <div class="envelope" aria-hidden="false">
+      <div class="envelope">
         <div class="env-body"></div>
-        <div class="env-flap" aria-hidden="true"></div>
-        <div class="env-letter" aria-hidden="true"></div>
+        <div class="env-flap"></div>
+        <div class="env-letter"></div>
 
         <button class="seal" id="seal" type="button" aria-label="Tocar sello para abrir">
           <span>MB</span>
@@ -1007,7 +1005,6 @@
 
     <header class="hero" id="inicio">
       <div class="hero-grid">
-        <!-- Card principal: SIN "Invitación" -->
         <div class="hero-card hero-photo reveal">
           <img class="hero-img" src="assets/hero-mara.jpg" alt="Mara Blanco" loading="eager" />
           <div class="hero-overlay"></div>
@@ -1129,7 +1126,6 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
 
       <section class="block" id="galeria" aria-label="Galería">
         <div class="card reveal">
-          <!-- ahora el título ya no es blanco -->
           <div class="kicker-soft" style="margin:0 auto"><span class="dot"></span> Galería</div>
           <h3 style="text-align:center;font-size:1.55rem;margin-top:14px">Momentos</h3>
 
@@ -1147,7 +1143,6 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
 
       <section class="block" id="mesa-de-regalos" aria-label="Mesa de regalos">
         <div class="card reveal" style="text-align:center">
-          <!-- ahora el título ya no es blanco -->
           <div class="kicker-soft" style="margin:0 auto"><span class="dot"></span> Mesa de regalos</div>
           <h3 style="font-size:1.55rem;margin-top:14px">Opciones de obsequio</h3>
           <p style="margin-top:6px;color:rgba(31,31,31,.80);line-height:1.6">
@@ -1242,7 +1237,6 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
     </main>
 
     <footer>
-      <!-- logo arriba del texto -->
       <img class="footer-logo" src="assets/logo-invytia.png" alt="Invytia" />
       Hecho con cariño para celebrar un momento inolvidable.
       <div class="fine">Invytia · Invitaciones digitales premium</div>
@@ -1273,8 +1267,12 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
       celebrada: "Mara Blanco",
       tipo: "XVI AÑOS",
       dateTimeLocal: "2026-07-18T18:00:00",
-      whatsappTo: "5215500000000", // <-- cambia esto
-      appsScriptEndpoint: "" // <-- tu web app (opcional)
+
+      // IMPORTANTE: cambia a tu WA real si quieres que el botón funcione
+      whatsappTo: "5215500000000",
+
+      // ✅ Tu Web App
+      appsScriptEndpoint: "https://script.google.com/macros/s/AKfycbzMVJvG56tmYtu1slRLq_JfdiL5T4C_4c1Ahg0z9kkuqRf0eySsyN2furo9NDZkZsMR/exec"
     };
 
     const $ = (sel, root=document) => root.querySelector(sel);
@@ -1292,22 +1290,19 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
       return `${base}?text=${encodeURIComponent(message)}`;
     }
 
+    // ✅ En GitHub Pages, Apps Script suele bloquear lectura por CORS.
+    // Usamos no-cors: se guarda en Sheets y damos feedback "Enviado" en UI.
     async function postToAppsScript(payload){
       if(!EVENT.appsScriptEndpoint) return { ok: true, skipped: true };
-      const res = await fetch(EVENT.appsScriptEndpoint, {
+
+      await fetch(EVENT.appsScriptEndpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-        mode: "cors"
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
       });
-      const ct = (res.headers.get("content-type") || "").toLowerCase();
-      if(ct.includes("application/json")){
-        const data = await res.json().catch(()=> ({}));
-        return { ok: res.ok, data };
-      } else {
-        const text = await res.text().catch(()=> "");
-        return { ok: res.ok, text };
-      }
+
+      return { ok: true, assumed: true };
     }
 
     function setStatus(el, type, msg){
@@ -1456,7 +1451,6 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
       }, { passive:true });
     }
 
-    // AUDIO: se activará al abrir el sobre (gesto del usuario) para que funcione en móvil
     function setupAudio(){
       const audio = $("#audio");
       const fab = $("#music-fab");
@@ -1525,26 +1519,21 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
           asistencia,
           telefono,
           createdAt: new Date().toISOString(),
-          source: "github-pages"
+          source: "github-pages",
+          userAgent: navigator.userAgent
         };
 
         try{
-          const result = await postToAppsScript(payload);
+          await postToAppsScript(payload);
 
-          if(result.ok){
-            setStatus(status, "ok", EVENT.appsScriptEndpoint
-              ? "Confirmación enviada. Gracias por acompañarnos."
-              : "Confirmación lista. (Aún falta conectar Google Sheets)."
-            );
+          setStatus(status, "ok", "Confirmación enviada. Gracias por acompañarnos.");
 
-            const text = buildWhatsAppMessage({ invitado: nombre, acompanante });
-            waBtn.href = waLink(text);
-            waBtn.style.display = "inline-flex";
-          }else{
-            setStatus(status, "bad", "No se pudo guardar tu confirmación. Intenta de nuevo.");
-          }
+          const text = buildWhatsAppMessage({ invitado: nombre, acompanante });
+          waBtn.href = waLink(text);
+          waBtn.style.display = "inline-flex";
+
         }catch(err){
-          setStatus(status, "bad", "Error de conexión. Intenta de nuevo.");
+          setStatus(status, "bad", "No se pudo enviar. Intenta de nuevo.");
         }finally{
           btn.disabled = false;
           btn.textContent = "Enviar confirmación";
@@ -1592,23 +1581,16 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
           nombre,
           mensaje,
           createdAt: new Date().toISOString(),
-          source: "github-pages"
+          source: "github-pages",
+          userAgent: navigator.userAgent
         };
 
         try{
-          const result = await postToAppsScript(payload);
-
-          if(result.ok){
-            setStatus(status, "ok", EVENT.appsScriptEndpoint
-              ? "Mensaje enviado. Gracias por tus buenos deseos."
-              : "Mensaje listo. (Aún falta conectar Google Sheets)."
-            );
-            $("#wish-mensaje").value = "";
-          }else{
-            setStatus(status, "bad", "No se pudo guardar tu mensaje. Intenta de nuevo.");
-          }
+          await postToAppsScript(payload);
+          setStatus(status, "ok", "Mensaje enviado. Gracias por tus buenos deseos.");
+          $("#wish-mensaje").value = "";
         }catch(err){
-          setStatus(status, "bad", "Error de conexión. Intenta de nuevo.");
+          setStatus(status, "bad", "No se pudo enviar. Intenta de nuevo.");
         }finally{
           btn.disabled = false;
           btn.textContent = "Enviar mensaje";
@@ -1633,13 +1615,12 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
     seal.addEventListener("click", async ()=>{
       intro.classList.add("opening");
 
-      // iniciar audio aquí para que en móvil sí arranque
+      // iniciar audio aquí (gesto de usuario) => funciona en móvil
       await audioCtl.tryPlay();
 
       setTimeout(()=>{
         intro.classList.add("hide");
         document.body.classList.remove("locked");
-        // asegurar inicio arriba
         window.scrollTo({ top: 0, behavior: "instant" });
       }, 780);
     });
