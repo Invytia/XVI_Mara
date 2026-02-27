@@ -20,7 +20,7 @@
   <!-- Editorial -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Script premium LEGIBLE (evita leer "XV Jaños") -->
+  <!-- Script premium LEGIBLE -->
   <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet" />
 
   <style>
@@ -82,9 +82,7 @@
       z-index:1;
     }
 
-    /* =========================
-       INTRO SOBRE (premium)
-       ========================= */
+    /* INTRO SOBRE */
     .intro{
       position:fixed;
       inset:0;
@@ -252,9 +250,7 @@
       .seal{ width: 78px; height: 78px; }
     }
 
-    /* =========================
-       Topbar
-       ========================= */
+    /* Topbar */
     .topbar{
       position:sticky;
       top:12px;
@@ -354,9 +350,7 @@
       .navlinks{ display:none; }
     }
 
-    /* =========================
-       Hero
-       ========================= */
+    /* Hero */
     header.hero{ padding: 58px 0 18px; }
     .hero-grid{
       display:grid;
@@ -684,8 +678,9 @@
       box-shadow: 0 10px 18px rgba(0,0,0,.06);
       background: #eee;
     }
-    .swatch.sand{ background: var(--sand-100); }
-    .swatch.beige{ background: var(--sand-300); }
+    .swatch.sand{ background: var(--sand-100); }   /* arena */
+    .swatch.beige{ background: var(--sand-300); }  /* beige */
+    .swatch.white{ background: #fff; }             /* blanco */
     .swatch.gold{
       background: linear-gradient(180deg, rgba(198,167,94,.95), rgba(183,146,63,.72));
     }
@@ -1051,8 +1046,8 @@
             <div style="font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--ink-2);margin-bottom:8px;">
               Detalles
             </div>
-            <div>Misa <b>18:00 hrs</b></div>
-            <div>Recepción <b>19:30 hrs</b></div>
+            <div>Misa <b>15:00 hrs</b></div>
+            <div>Recepción <b>16:30 hrs</b></div>
             <div>Vestimenta: <b>Formal</b>.</div>
             <div>Colores reservados: <b>blanco, dorado, beige y arena</b>.</div>
           </div>
@@ -1070,7 +1065,7 @@
             <article class="card reveal" aria-label="Misa">
               <img class="card-img" src="assets/misa.jpg" alt="Parroquia de María Madre de Cristo" loading="lazy">
               <h3>Ceremonia Religiosa</h3>
-              <div class="time"><span class="i"></span> 18:00 hrs · Parroquia</div>
+              <div class="time"><span class="i"></span> 15:00 hrs · Parroquia</div>
               <p>
                 <b>Parroquia de María Madre de Cristo</b><br/>
                 Av. Antonio Díaz Soto y Gama Mz. 14 Lt. 39, Col. U. Hab. Vicente Guerrero,
@@ -1089,7 +1084,7 @@ Av. Antonio Díaz Soto y Gama Mz. 14 Lt. 39, Col. U. Hab. Vicente Guerrero, Alca
             <article class="card reveal" aria-label="Recepción">
               <img class="card-img" src="assets/salon.jpg" alt="Hacienda Tezontle 2" loading="lazy">
               <h3>Recepción</h3>
-              <div class="time"><span class="i"></span> 19:30 hrs · Salón</div>
+              <div class="time"><span class="i"></span> 16:30 hrs · Salón</div>
               <p>
                 <b>Hacienda Tezontle 2</b><br/>
                 C. Escobillera 10, Col. Área Federal Central de Abastos,
@@ -1117,8 +1112,10 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
             <b>Colores reservados para la festejada:</b> blanco, dorado, beige y arena.
           </p>
           <div class="swatches" aria-label="Paleta sugerida">
-            <span class="swatch sand" title="Arena"></span>
+            <!-- ✅ ahora: blanco, beige, arena y dorado -->
+            <span class="swatch white" title="Blanco"></span>
             <span class="swatch beige" title="Beige"></span>
+            <span class="swatch sand" title="Arena"></span>
             <span class="swatch gold" title="Dorado"></span>
           </div>
         </div>
@@ -1137,6 +1134,8 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
             <button type="button" data-src="assets/gallery/gallery-05.jpg" aria-label="Abrir foto 5"><img src="assets/gallery/gallery-05.jpg" alt="Galería 5" loading="lazy"></button>
             <button type="button" data-src="assets/gallery/gallery-06.jpg" aria-label="Abrir foto 6"><img src="assets/gallery/gallery-06.jpg" alt="Galería 6" loading="lazy"></button>
             <button type="button" data-src="assets/gallery/gallery-07.jpg" aria-label="Abrir foto 7"><img src="assets/gallery/gallery-07.jpg" alt="Galería 7" loading="lazy"></button>
+            <!-- ✅ nueva foto -->
+            <button type="button" data-src="assets/gallery/gallery-08.jpg" aria-label="Abrir foto 8"><img src="assets/gallery/gallery-08.jpg" alt="Galería 8" loading="lazy"></button>
           </div>
         </div>
       </section>
@@ -1266,13 +1265,11 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
     const EVENT = {
       celebrada: "Mara Blanco",
       tipo: "XVI AÑOS",
-      dateTimeLocal: "2026-07-18T18:00:00",
+      dateTimeLocal: "2026-07-18T15:00:00", // ✅ misa 15:00 para referencia del conteo
 
-      // ✅ Número WhatsApp destino: +52 55 2558 1442
-      // Formato wa.me: 521 + número (sin espacios)
+      // WhatsApp destino: +52 55 2558 1442
       whatsappTo: "5215525581442",
 
-      // ✅ Tu Web App
       appsScriptEndpoint: "https://script.google.com/macros/s/AKfycbzMVJvG56tmYtu1slRLq_JfdiL5T4C_4c1Ahg0z9kkuqRf0eySsyN2furo9NDZkZsMR/exec"
     };
 
@@ -1291,8 +1288,6 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
       return `${base}?text=${encodeURIComponent(message)}`;
     }
 
-    // ✅ En GitHub Pages, Apps Script suele bloquear lectura por CORS.
-    // Usamos no-cors: se guarda en Sheets y damos feedback "Enviado" en UI.
     async function postToAppsScript(payload){
       if(!EVENT.appsScriptEndpoint) return { ok: true, skipped: true };
 
@@ -1616,7 +1611,7 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
     seal.addEventListener("click", async ()=>{
       intro.classList.add("opening");
 
-      // iniciar audio aquí (gesto de usuario) => funciona en móvil
+      // iniciar audio aquí (gesto de usuario)
       await audioCtl.tryPlay();
 
       setTimeout(()=>{
