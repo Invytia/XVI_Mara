@@ -16,7 +16,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Editorial -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Manuscrita para el sobre -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
 
   <style>
     :root{
@@ -34,11 +37,11 @@
       --shadow: 0 22px 60px rgba(17, 17, 17, .12);
       --shadow-soft: 0 14px 40px rgba(17, 17, 17, .09);
 
-      --radius: 22px;
       --radius-lg: 28px;
 
       --serif: "Cormorant Garamond", serif;
       --sans: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      --script: "Great Vibes", cursive;
 
       --max: 1080px;
     }
@@ -68,6 +71,7 @@
 
     a{ color:inherit; text-decoration:none; }
     button{ font-family:inherit; }
+    body.locked{ overflow:hidden; }
 
     .wrap{
       width:min(var(--max), calc(100% - 40px));
@@ -76,7 +80,182 @@
       z-index:1;
     }
 
-    /* Topbar */
+    /* =========================
+       INTRO SOBRE (premium)
+       ========================= */
+    .intro{
+      position:fixed;
+      inset:0;
+      z-index:9999;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 22px;
+      background:
+        radial-gradient(900px 600px at 50% 20%, rgba(198,167,94,.18), transparent 62%),
+        linear-gradient(180deg, rgba(251,247,240,.96), rgba(245,239,230,.92));
+      backdrop-filter: blur(10px);
+    }
+    .intro.hide{
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .55s ease;
+    }
+    .intro-card{
+      width:min(720px, 100%);
+      border-radius: 30px;
+      border: 1px solid rgba(198,167,94,.26);
+      background: rgba(255,255,255,.55);
+      box-shadow: 0 28px 90px rgba(0,0,0,.16);
+      padding: 24px 22px 26px;
+      position:relative;
+      overflow:hidden;
+    }
+    .intro-card::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:
+        radial-gradient(520px 300px at 20% 0%, rgba(198,167,94,.14), transparent 62%),
+        radial-gradient(600px 340px at 90% 100%, rgba(255,255,255,.25), transparent 60%);
+      opacity:.75;
+      pointer-events:none;
+    }
+    .intro-title{
+      position:relative;
+      z-index:1;
+      text-align:center;
+      margin: 2px 0 14px;
+      color: rgba(44,44,44,.92);
+    }
+    .intro-title .line1{
+      font-family: var(--script);
+      font-size: clamp(2.2rem, 5vw, 3.1rem);
+      line-height: .95;
+      margin-bottom: 4px;
+    }
+    .intro-title .line2{
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.25rem, 2.8vw, 1.7rem);
+      letter-spacing: .02em;
+    }
+    .intro-title .hint{
+      margin-top: 10px;
+      font-family: var(--sans);
+      font-size: .85rem;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: rgba(44,44,44,.62);
+    }
+
+    .envelope{
+      position:relative;
+      z-index:1;
+      margin: 16px auto 6px;
+      width:min(520px, 100%);
+      height: 320px;
+      perspective: 900px;
+    }
+    .env-body{
+      position:absolute;
+      inset:0;
+      border-radius: 26px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,.38));
+      border: 1px solid rgba(198,167,94,.22);
+      box-shadow: 0 18px 54px rgba(0,0,0,.12);
+      overflow:hidden;
+    }
+    .env-body::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:
+        radial-gradient(420px 240px at 20% 0%, rgba(198,167,94,.16), transparent 65%),
+        radial-gradient(480px 260px at 90% 100%, rgba(255,255,255,.35), transparent 60%);
+      opacity:.75;
+    }
+    .env-flap{
+      position:absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 58%;
+      transform-origin: top center;
+      transform: rotateX(0deg);
+      transition: transform .75s cubic-bezier(.2,.9,.2,1);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.26));
+      border-bottom: 1px solid rgba(198,167,94,.22);
+      clip-path: polygon(0 0, 100% 0, 50% 86%);
+    }
+    .env-letter{
+      position:absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      top: 22%;
+      border-radius: 20px;
+      border: 1px solid rgba(198,167,94,.18);
+      background: rgba(251,247,240,.82);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.22);
+      transform: translateY(8px);
+      transition: transform .75s cubic-bezier(.2,.9,.2,1);
+      overflow:hidden;
+    }
+    .env-letter::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(520px 240px at 50% 0%, rgba(198,167,94,.10), transparent 55%);
+      opacity:.75;
+      pointer-events:none;
+    }
+    .seal{
+      position:absolute;
+      left: 50%;
+      top: 56%;
+      transform: translate(-50%, -50%);
+      width: 86px;
+      height: 86px;
+      border-radius: 999px;
+      border: 1px solid rgba(183,146,63,.60);
+      background: linear-gradient(180deg, rgba(198,167,94,.98), rgba(183,146,63,.70));
+      box-shadow: 0 18px 44px rgba(198,167,94,.28);
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      user-select:none;
+      transition: transform .18s ease, filter .18s ease;
+    }
+    .seal:hover{ transform: translate(-50%, -50%) scale(1.03); }
+    .seal:active{ transform: translate(-50%, -50%) scale(.99); filter: brightness(.98); }
+    .seal span{
+      font-family: var(--serif);
+      font-weight: 700;
+      color: rgba(255,255,255,.95);
+      letter-spacing:.06em;
+      font-size: 1.05rem;
+      text-shadow: 0 10px 20px rgba(0,0,0,.12);
+    }
+
+    .intro.opening .env-flap{
+      transform: rotateX(-155deg);
+    }
+    .intro.opening .env-letter{
+      transform: translateY(-22px);
+    }
+
+    @media (max-width: 520px){
+      .envelope{ height: 300px; }
+      .seal{ width: 78px; height: 78px; }
+    }
+
+    /* =========================
+       Topbar
+       ========================= */
     .topbar{
       position:sticky;
       top:12px;
@@ -176,7 +355,9 @@
       .navlinks{ display:none; }
     }
 
-    /* Hero */
+    /* =========================
+       Hero
+       ========================= */
     header.hero{ padding: 58px 0 18px; }
     .hero-grid{
       display:grid;
@@ -199,7 +380,6 @@
       background: linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.22));
     }
 
-    /* Hero Photo */
     .hero-card.hero-photo{
       min-height: 520px;
       display:flex;
@@ -230,28 +410,8 @@
       text-shadow: 0 10px 24px rgba(0,0,0,.25);
     }
 
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.22);
-      background: rgba(255,255,255,.14);
-      color: rgba(255,255,255,.86);
-      font-size:.78rem;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      width:fit-content;
-    }
-    .kicker .dot{
-      width:8px;height:8px;border-radius:99px;
-      background: linear-gradient(180deg, rgba(198,167,94,.98), rgba(183,146,63,.65));
-      box-shadow: 0 10px 20px rgba(198,167,94,.22);
-    }
-
     h1{
-      margin:18px 0 10px;
+      margin: 8px 0 10px; /* sin el badge "Invitación" */
       font-family: var(--serif);
       font-weight: 700;
       letter-spacing: .01em;
@@ -278,6 +438,7 @@
       line-height:1.65;
       color: rgba(255,255,255,.90);
     }
+    /* subtítulos con misma fuente (serif) */
     .family .lead{
       font-family:var(--serif);
       font-weight: 600;
@@ -293,6 +454,8 @@
       margin:0 0 6px;
     }
     .family .subnames{
+      font-family:var(--serif);
+      font-weight: 600;
       margin:0;
       color: rgba(255,255,255,.88);
     }
@@ -301,7 +464,7 @@
       .hero-card.hero-photo{ min-height: 540px; padding: 28px 20px; }
     }
 
-    /* Right card */
+    /* Right panel */
     .side-card{
       border-radius: var(--radius-lg);
       border: 1px solid rgba(198,167,94,.22);
@@ -458,9 +621,6 @@
       position:relative;
       z-index:1;
     }
-    @media (max-width:900px){
-      .card-img{ height:200px; }
-    }
 
     .map-actions{
       position:relative;
@@ -502,8 +662,14 @@
     .btn:hover{ transform: translateY(-2px); }
     .btn:active{ transform: translateY(0px); filter: brightness(.98); }
 
-    /* Vestimenta full width */
+    /* Vestimenta full width + centrada en escritorio */
     .full-width{ width:100%; }
+    .vest-center{ text-align:left; }
+    @media (min-width: 901px){
+      .vest-center{ text-align:center; }
+      .vest-center .time{ justify-content:center; }
+      .vest-center .swatches{ justify-content:center; }
+    }
 
     .swatches{
       display:flex;
@@ -526,6 +692,29 @@
       background: linear-gradient(180deg, rgba(198,167,94,.95), rgba(183,146,63,.72));
     }
 
+    /* Kicker para secciones (antes se veía blanco) */
+    .kicker-soft{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(198,167,94,.22);
+      background: rgba(255,255,255,.34);
+      color: rgba(44,44,44,.72);
+      font-size:.78rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      width:fit-content;
+      position:relative;
+      z-index:1;
+    }
+    .kicker-soft .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: linear-gradient(180deg, rgba(198,167,94,.98), rgba(183,146,63,.65));
+      box-shadow: 0 10px 20px rgba(198,167,94,.18);
+    }
+
     /* Forms */
     .form-grid{
       display:grid;
@@ -534,6 +723,7 @@
     }
     @media (max-width: 900px){
       .form-grid{ grid-template-columns: 1fr; }
+      .countdown{ grid-template-columns: repeat(2,1fr); }
     }
     label{
       display:block;
@@ -680,7 +870,6 @@
     .lb-btn:hover{ transform: translateY(-50%) scale(1.03); background: rgba(255,255,255,.16); }
     .lb-prev{ left: 14px; }
     .lb-next{ right: 14px; }
-
     .lb-close{
       pointer-events:auto;
       position:absolute;
@@ -737,6 +926,15 @@
       font-size:.78rem;
       color: rgba(44,44,44,.55);
     }
+    .footer-logo{
+      width: 54px;
+      height: 54px;
+      object-fit:contain;
+      display:block;
+      margin: 0 auto 10px;
+      opacity: .95;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.08));
+    }
 
     /* Reveal */
     .reveal{
@@ -758,7 +956,28 @@
   </style>
 </head>
 
-<body>
+<body class="locked">
+  <!-- INTRO SOBRE -->
+  <div class="intro" id="intro" aria-label="Sobre de invitación">
+    <div class="intro-card">
+      <div class="intro-title">
+        <div class="line1">Mis XVI años</div>
+        <div class="line2">Mara Blanco</div>
+        <div class="hint">Toca el sello para abrir</div>
+      </div>
+
+      <div class="envelope" aria-hidden="false">
+        <div class="env-body"></div>
+        <div class="env-flap" aria-hidden="true"></div>
+        <div class="env-letter" aria-hidden="true"></div>
+
+        <button class="seal" id="seal" type="button" aria-label="Tocar sello para abrir">
+          <span>MB</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <div class="wrap">
     <div class="topbar">
       <div class="topbar-inner">
@@ -788,11 +1007,11 @@
 
     <header class="hero" id="inicio">
       <div class="hero-grid">
+        <!-- Card principal: SIN "Invitación" -->
         <div class="hero-card hero-photo reveal">
           <img class="hero-img" src="assets/hero-mara.jpg" alt="Mara Blanco" loading="eager" />
           <div class="hero-overlay"></div>
           <div class="hero-content">
-            <div class="kicker"><span class="dot"></span> Invitación</div>
             <h1>Mis XVI Años<br/>Mara Blanco</h1>
             <p class="subtitle">18 de julio de 2026</p>
 
@@ -893,7 +1112,7 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
       </section>
 
       <section class="block" id="vestimenta" aria-label="Código de vestimenta">
-        <div class="card reveal full-width">
+        <div class="card reveal full-width vest-center">
           <h3 style="font-size:1.45rem">Código de Vestimenta</h3>
           <div class="time"><span class="i"></span> Formal</div>
           <p>
@@ -910,7 +1129,8 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
 
       <section class="block" id="galeria" aria-label="Galería">
         <div class="card reveal">
-          <div class="kicker" style="margin:0 auto"><span class="dot"></span> Galería</div>
+          <!-- ahora el título ya no es blanco -->
+          <div class="kicker-soft" style="margin:0 auto"><span class="dot"></span> Galería</div>
           <h3 style="text-align:center;font-size:1.55rem;margin-top:14px">Momentos</h3>
 
           <div class="gallery-grid" id="gallery">
@@ -927,7 +1147,8 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
 
       <section class="block" id="mesa-de-regalos" aria-label="Mesa de regalos">
         <div class="card reveal" style="text-align:center">
-          <div class="kicker" style="margin:0 auto"><span class="dot"></span> Mesa de regalos</div>
+          <!-- ahora el título ya no es blanco -->
+          <div class="kicker-soft" style="margin:0 auto"><span class="dot"></span> Mesa de regalos</div>
           <h3 style="font-size:1.55rem;margin-top:14px">Opciones de obsequio</h3>
           <p style="margin-top:6px;color:rgba(31,31,31,.80);line-height:1.6">
             Tu presencia es lo más importante para nosotros, pero si aún así deseas hacerme un obsequio te dejamos estas opciones
@@ -1021,6 +1242,8 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
     </main>
 
     <footer>
+      <!-- logo arriba del texto -->
+      <img class="footer-logo" src="assets/logo-invytia.png" alt="Invytia" />
       Hecho con cariño para celebrar un momento inolvidable.
       <div class="fine">Invytia · Invitaciones digitales premium</div>
     </footer>
@@ -1038,7 +1261,7 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
     </div>
   </div>
 
-  <!-- Audio autoplay + sticky control -->
+  <!-- Audio -->
   <audio id="audio" src="assets/song.mp3" preload="auto" loop></audio>
   <button class="music-fab" id="music-fab" type="button" aria-label="Pausar o reanudar música">
     <span class="dot"></span>
@@ -1210,6 +1433,7 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
         if(e.key === "ArrowLeft") prev();
       });
 
+      // Swipe mobile
       let x0 = null, y0 = null;
       const threshold = 35;
 
@@ -1232,6 +1456,7 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
       }, { passive:true });
     }
 
+    // AUDIO: se activará al abrir el sobre (gesto del usuario) para que funcione en móvil
     function setupAudio(){
       const audio = $("#audio");
       const fab = $("#music-fab");
@@ -1248,7 +1473,6 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
           label.textContent = "Música: Activar";
         }
       }
-
       function pause(){
         audio.pause();
         isPlaying = false;
@@ -1260,7 +1484,7 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
         else await tryPlay();
       });
 
-      window.addEventListener("load", ()=> { tryPlay(); });
+      return { tryPlay, pause };
     }
 
     function setupRSVP(){
@@ -1393,14 +1617,32 @@ C. Escobillera 10, Col. Área Federal Central de Abastos, Alcaldía Iztapalapa, 
     }
 
     // INIT
+    const audioCtl = setupAudio();
     startCountdown();
     setupCopy();
     setupSmoothAnchors();
     setupReveal();
     setupGallery();
-    setupAudio();
     setupRSVP();
     setupWishes();
+
+    // SOBRE: desbloquea landing + inicia música (funciona en móvil)
+    const intro = $("#intro");
+    const seal = $("#seal");
+
+    seal.addEventListener("click", async ()=>{
+      intro.classList.add("opening");
+
+      // iniciar audio aquí para que en móvil sí arranque
+      await audioCtl.tryPlay();
+
+      setTimeout(()=>{
+        intro.classList.add("hide");
+        document.body.classList.remove("locked");
+        // asegurar inicio arriba
+        window.scrollTo({ top: 0, behavior: "instant" });
+      }, 780);
+    });
   </script>
 </body>
 </html>
